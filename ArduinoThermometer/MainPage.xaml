@@ -4,7 +4,57 @@
              xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
              x:Class="ArduinoThermometer.MainPage"
              Title="Temperture"
-             BackgroundColor="LightBlue">
+             BackgroundColor="White"
+             Padding="10">
 
-             <gauge:SfLinearGauge />
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <gauge:SfLinearGauge Orientation="Vertical" Minimum="-50" Maximum="50">
+            <gauge:SfLinearGauge.BarPointers>
+                <gauge:BarPointer Value="-20" PointerSize="30" 
+                                          Offset="-30"
+                                          Position="Inside" 
+                                          CornerStyle="BothCurve">
+                    <gauge:BarPointer.GradientStops>
+                        <gauge:GaugeGradientStop Value="-60" Color="DarkBlue"/>
+                        <gauge:GaugeGradientStop Value="-20" Color="Blue"/>
+                        <gauge:GaugeGradientStop Value="0" Color="LightBlue"/>
+                        <gauge:GaugeGradientStop Value="20" Color="LightGreen"/>
+                        <gauge:GaugeGradientStop Value="30" Color="Red"/>
+                    </gauge:BarPointer.GradientStops>
+                </gauge:BarPointer>
+            </gauge:SfLinearGauge.BarPointers>
+        </gauge:SfLinearGauge>
+        <gauge:SfLinearGauge Orientation="Vertical" Minimum="0" Maximum="100" Grid.Column="1">
+            <gauge:SfLinearGauge.BarPointers>
+                <gauge:BarPointer Value="40" PointerSize="30" 
+                                          Offset="-30"
+                                          Position="Inside" 
+                                          CornerStyle="BothCurve">
+                </gauge:BarPointer>
+            </gauge:SfLinearGauge.BarPointers>
+        </gauge:SfLinearGauge>
+        <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Temperature:" FontSize="20" TextColor="Black"/>
+                <Label Grid.Row="1" Text="-20°C" FontSize="20" TextColor="Black"/>
+                <Label Grid.Row="2" Text="Humality" FontSize="20" TextColor="Black"/>
+                <Label Grid.Row="3" Text="20%" FontSize="20" TextColor="Black"/>
+            </Grid>
+        </Grid>
 </ContentPage>
