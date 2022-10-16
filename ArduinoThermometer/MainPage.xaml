@@ -14,14 +14,13 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        
         <gauge:SfLinearGauge Orientation="Vertical" Minimum="-50" Maximum="50">
             <gauge:SfLinearGauge.BarPointers>
-                <gauge:BarPointer Value="-20" PointerSize="30" 
+                <gauge:BarPointer Value="30" PointerSize="30" 
                                           Offset="-30"
                                           Position="Inside" 
                                           CornerStyle="BothCurve">
@@ -44,17 +43,26 @@
                 </gauge:BarPointer>
             </gauge:SfLinearGauge.BarPointers>
         </gauge:SfLinearGauge>
+        
         <Grid Grid.Column="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="50" />
-                    <RowDefinition Height="30" />
-                    <RowDefinition Height="50" />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-                <Label Grid.Row="0" Text="Temperature:" FontSize="20" TextColor="Black"/>
-                <Label Grid.Row="1" Text="-20°C" FontSize="20" TextColor="Black"/>
-                <Label Grid.Row="2" Text="Humality" FontSize="20" TextColor="Black"/>
-                <Label Grid.Row="3" Text="20%" FontSize="20" TextColor="Black"/>
-            </Grid>
+
+            <Frame CornerRadius="10" HorizontalOptions="Fill">
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="Temperature" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
+                    <Label Grid.Row="1" Text="20°C" FontSize="50"  TextColor="Black" HorizontalOptions="Center" />
+                    <Label Grid.Row="2" Text="Humidity" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
+                    <Label Grid.Row="3" Text="20%" FontSize="50"  TextColor="Black" HorizontalOptions="Center" />
+                </Grid>
+            </Frame>
         </Grid>
+    </Grid>
 </ContentPage>
