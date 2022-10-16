@@ -7,10 +7,10 @@
              BackgroundColor="White"
              Padding="10">
 
-    <Grid Padding="10">
+    
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
-            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -49,7 +49,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Frame CornerRadius="10" HorizontalOptions="Fill">
+            <Frame CornerRadius="40"  HorizontalOptions="Fill" BorderColor="White">
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -64,5 +64,12 @@
                 </Grid>
             </Frame>
         </Grid>
+        <Frame Grid.Row="1" CornerRadius="40" Grid.ColumnSpan="3" Margin="5" HorizontalOptions="Fill" BorderColor="White">
+            <StackLayout>
+                <Label Text="Atmospheric Pressure: " FontSize="30" TextColor="Black" HorizontalOptions="Center"/>
+                <Label Text="1024 hPa" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
+                <Button Text="Update" FontSize="30" BackgroundColor="#002857" TextColor="#99d9d9" Margin="20"/>
+            </StackLayout>
+        </Frame>
     </Grid>
 </ContentPage>

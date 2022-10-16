@@ -8,7 +8,6 @@
     Shell.ForegroundColor="#99d9d9">
 
     
-
     <TabBar>
         <Tab Title="Temperature" Icon="thermometer">
             <ShellContent
