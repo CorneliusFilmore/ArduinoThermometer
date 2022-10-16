@@ -4,11 +4,36 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ArduinoThermometer"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.BackgroundColor="#002857"
+    Shell.ForegroundColor="#99d9d9"
+    Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    
+
+    <TabBar>
+        <Tab Title="Temperature" Icon="thermometer">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Title="Statistics" Icon="clouds">
+            <ShellContent
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        </Tab>
+    </TabBar>
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TabBar">
+                <Setter Property="Shell.TabBarBackgroundColor"
+                     Value="#002857"/>
+                <Setter Property="Shell.TabBarTitleColor"
+                    Value="#99d9d9" />
+                <Setter Property="Shell.TabBarUnselectedColor"
+                    Value="#0a5587" />
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
 
 </Shell>
