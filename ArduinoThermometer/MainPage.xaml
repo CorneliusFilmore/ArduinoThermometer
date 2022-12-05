@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
+             
              x:Class="ArduinoThermometer.MainPage"
              Title="Temperture"
              BackgroundColor="White"
@@ -18,31 +18,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <gauge:SfLinearGauge Orientation="Vertical" Minimum="-50" Maximum="50">
-            <gauge:SfLinearGauge.BarPointers>
-                <gauge:BarPointer Value="30" PointerSize="30" 
-                                          Offset="-30"
-                                          Position="Inside" 
-                                          CornerStyle="BothCurve">
-                    <gauge:BarPointer.GradientStops>
-                        <gauge:GaugeGradientStop Value="-60" Color="DarkBlue"/>
-                        <gauge:GaugeGradientStop Value="-20" Color="Blue"/>
-                        <gauge:GaugeGradientStop Value="0" Color="LightBlue"/>
-                        <gauge:GaugeGradientStop Value="20" Color="LightGreen"/>
-                        <gauge:GaugeGradientStop Value="30" Color="Red"/>
-                    </gauge:BarPointer.GradientStops>
-                </gauge:BarPointer>
-            </gauge:SfLinearGauge.BarPointers>
-        </gauge:SfLinearGauge>
-        <gauge:SfLinearGauge Orientation="Vertical" Minimum="0" Maximum="100" Grid.Column="1">
-            <gauge:SfLinearGauge.BarPointers>
-                <gauge:BarPointer Value="40" PointerSize="30" 
-                                          Offset="-30"
-                                          Position="Inside" 
-                                          CornerStyle="BothCurve">
-                </gauge:BarPointer>
-            </gauge:SfLinearGauge.BarPointers>
-        </gauge:SfLinearGauge>
+        
         
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>

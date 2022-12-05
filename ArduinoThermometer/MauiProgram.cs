@@ -1,4 +1,6 @@
 ﻿using Syncfusion.Maui.Core.Hosting;
+using ArduinoThermometer.Bluetooth;
+using ArduinoThermometer.Platforms.Android;
 
 namespace ArduinoThermometer;
 
@@ -15,7 +17,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
-
-		return builder.Build();
+        builder.Services.AddSingleton<IBluetoothConnector, BluetoothConnector>();
+        return builder.Build();
 	}
 }
