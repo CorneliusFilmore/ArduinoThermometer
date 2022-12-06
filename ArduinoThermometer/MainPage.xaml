@@ -1,75 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:gauge="clr-namespace:Syncfusion.Maui.Gauges;assembly=Syncfusion.Maui.Gauges"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"     
              x:Class="ArduinoThermometer.MainPage"
              Title="Temperture"
              BackgroundColor="White"
              Padding="10">
 
-    
-    <Grid >
+    <!-- MAIN WINDOW -->
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <gauge:SfLinearGauge Orientation="Vertical" Minimum="-50" Maximum="50">
-            <gauge:SfLinearGauge.BarPointers>
-                <gauge:BarPointer Value="30" PointerSize="30" 
-                                          Offset="-30"
-                                          Position="Inside" 
-                                          CornerStyle="BothCurve">
-                    <gauge:BarPointer.GradientStops>
-                        <gauge:GaugeGradientStop Value="-60" Color="DarkBlue"/>
-                        <gauge:GaugeGradientStop Value="-20" Color="Blue"/>
-                        <gauge:GaugeGradientStop Value="0" Color="LightBlue"/>
-                        <gauge:GaugeGradientStop Value="20" Color="LightGreen"/>
-                        <gauge:GaugeGradientStop Value="30" Color="Red"/>
-                    </gauge:BarPointer.GradientStops>
-                </gauge:BarPointer>
-            </gauge:SfLinearGauge.BarPointers>
-        </gauge:SfLinearGauge>
-        <gauge:SfLinearGauge Orientation="Vertical" Minimum="0" Maximum="100" Grid.Column="1">
-            <gauge:SfLinearGauge.BarPointers>
-                <gauge:BarPointer Value="40" PointerSize="30" 
-                                          Offset="-30"
-                                          Position="Inside" 
-                                          CornerStyle="BothCurve">
-                </gauge:BarPointer>
-            </gauge:SfLinearGauge.BarPointers>
-        </gauge:SfLinearGauge>
-        
-        <Grid Grid.Column="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
 
-            <Frame CornerRadius="40"  HorizontalOptions="Fill" BorderColor="White">
-                <Grid Grid.Row="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="2*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="2*" />
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Text="Temperature" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
-                    <Label Grid.Row="1" Text="20°C" FontSize="50"  TextColor="Black" HorizontalOptions="Center" />
-                    <Label Grid.Row="2" Text="Humidity" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
-                    <Label Grid.Row="3" Text="20%" FontSize="50"  TextColor="Black" HorizontalOptions="Center" />
-                </Grid>
-            </Frame>
-        </Grid>
-        <Frame Grid.Row="1" CornerRadius="40" Grid.ColumnSpan="3" Margin="5" HorizontalOptions="Fill" BorderColor="White">
-            <StackLayout>
-                <Label Text="Atmospheric Pressure: " FontSize="30" TextColor="Black" HorizontalOptions="Center"/>
-                <Label Text="1024 hPa" FontSize="50" TextColor="Black" HorizontalOptions="Center"/>
-                <Button Text="Update" FontSize="30" BackgroundColor="#002857" TextColor="#99d9d9" Margin="20"/>
+        <!-- UPPER WINDOW -->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- THERMOMETER BAR WINDOW  The max value is 0.5 have to normalize -->
+            <StackLayout Grid.Column="0" Padding="1">
+                <ProgressBar x:Name="TempProgress" Progress="0.3" BackgroundColor="White" ProgressColor="Red" Rotation="-90" Scale="7" />
             </StackLayout>
-        </Frame>
+
+            <!-- HUMIDITY BAR WINDOW -->
+            <StackLayout Grid.Column="1" >
+                <ProgressBar x:Name="HumProgress" Progress="0.5" BackgroundColor="White" ProgressColor="Blue" Rotation="-90" Scale="7" />
+            </StackLayout>
+
+            <!-- LABELS WINDOW -->
+            <StackLayout Grid.Column="2" Spacing="50" Padding="5">
+                <Label Text="Temperature" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
+                <Label x:Name="TempLabel" Text="20°C" FontSize="50"  TextColor="Black" HorizontalOptions="Center" />
+                <Label Text="Humidity" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
+                <Label x:Name="HumLabel" Text="80%" FontSize="50"  TextColor="Black" HorizontalOptions="Center" />
+            </StackLayout>
+        </Grid>
+
+        <!-- LOWER WINDOW -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Spacing="10">
+                <Label Text="Last Update:" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
+                <Label x:Name="TimeLabel" Text="06.12.2022 20:44" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1">
+                <Button Text="Update" FontSize="30" BackgroundColor="#002857" TextColor="#99d9d9" Margin="20" Clicked="Button_Clicked"/>
+            </StackLayout>
+
+        </Grid>
     </Grid>
 </ContentPage>

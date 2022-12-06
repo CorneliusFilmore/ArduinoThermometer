@@ -1,9 +1,13 @@
-﻿namespace ArduinoThermometer;
+﻿using ArduinoThermometer.Bluetooth;
+
+namespace ArduinoThermometer;
 
 public partial class AppShell : Shell
 {
-	public AppShell()
+	private readonly IBluetoothConnector _bluetoothConnector;
+	public AppShell(IBluetoothConnector bluetoothConnector)
 	{
 		InitializeComponent();
-	}
+       
+    }
 }
