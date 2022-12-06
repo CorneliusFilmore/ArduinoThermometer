@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ArduinoThermometer.About"
-             Title="About"
+             Title="Statistics"
              Background="White">
-    <VerticalStackLayout Margin="10">
+    <VerticalStackLayout Margin="10" Spacing="20">
+
         <Frame BorderColor="Black">
             <Grid>
                 <Grid.RowDefinitions>
@@ -16,9 +17,95 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" Text="Date: 01.12.2022"/>
-                <Label Grid.Column="0" Text="Date: 01.12.2022"/>
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 07.12.2022"/>
+                <Label Grid.Column="1" x:Name="FakeLabelTemp" TextColor="Black" Text="Temp: 21°C"/>
+                <Label Grid.Column="2" x:Name="FakeLabelHum" TextColor="Black" Text="Humid: 80%"/>
 
+            </Grid>
+        </Frame>
+
+        <Frame BorderColor="Black">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 06.12.2022"/>
+                <Label Grid.Column="1" TextColor="Black" Text="Temp: 21°C"/>
+                <Label Grid.Column="2" TextColor="Black" Text="Humid: 70%"/>
+
+            </Grid>
+        </Frame>
+        <Frame BorderColor="Black">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 05.12.2022"/>
+                <Label Grid.Column="1" TextColor="Black" Text="Temp: 20°C"/>
+                <Label Grid.Column="2" TextColor="Black" Text="Humid: 80%"/>
+
+            </Grid>
+        </Frame>
+        <Frame BorderColor="Black">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 04.12.2022"/>
+                <Label Grid.Column="1" TextColor="Black" Text="Temp: 15°C"/>
+                <Label Grid.Column="2" TextColor="Black" Text="Humid: 60%"/>
+
+            </Grid>
+        </Frame>
+        <Frame BorderColor="Black">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 03.12.2022"/>
+                <Label Grid.Column="1" TextColor="Black" Text="Temp: 17°C"/>
+                <Label Grid.Column="2" TextColor="Black" Text="Humid: 50%"/>
+
+            </Grid>
+        </Frame>
+        <Frame BorderColor="Black">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 02.12.2022"/>
+                <Label Grid.Column="1" TextColor="Black" Text="Temp: 15°C"/>
+                <Label Grid.Column="2" TextColor="Black" Text="Humid: 90%"/>
 
             </Grid>
         </Frame>
