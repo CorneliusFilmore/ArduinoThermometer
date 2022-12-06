@@ -10,7 +10,7 @@ public partial class MainPage : ContentPage
     public MainPage() 
 	{
 		InitializeComponent();
-        _bluetoothConnector = new BluetoothConnector();
+        /*_bluetoothConnector = new BluetoothConnector();
         const string ArduinoBluetoothTransceiverName = "BTM1";
 
         //Gets a list of all connected Bluetooth devices
@@ -18,7 +18,7 @@ public partial class MainPage : ContentPage
 
         //Connects to the Arduino
         var arduino = ConnectedDevices.FirstOrDefault(d => d == ArduinoBluetoothTransceiverName);
-        _bluetoothConnector.Connect(arduino);
+        _bluetoothConnector.Connect(arduino);*/
 
     }
 

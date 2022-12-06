@@ -16,8 +16,8 @@
         </Tab>
         <Tab Title="Statistics" Icon="clouds">
             <ShellContent
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate local:About}"
+            Route="About" />
         </Tab>
     </TabBar>
 
