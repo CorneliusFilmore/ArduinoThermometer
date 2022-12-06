@@ -45,9 +45,9 @@ namespace ArduinoThermometer.Platforms.Android
         public void Connect(string deviceName)
         {
             var device = _adapter.BondedDevices.FirstOrDefault(d => d.Name == deviceName);
-           // _socket = device.CreateRfcommSocketToServiceRecord(UUID.FromString(SspUdid));
+            _socket = device.CreateRfcommSocketToServiceRecord(UUID.FromString(SspUdid));
 
-           //_socket.Connect();
+           _socket.Connect();
         }
 
         public int GetData(Commands com)
@@ -69,7 +69,7 @@ namespace ArduinoThermometer.Platforms.Android
 
             byte[] output = new byte[5];
             _socket.OutputStream.Write(buffer, 0, buffer.Length);
-            Thread.Sleep(500);
+            Thread.Sleep(2000);
             _socket.InputStream.Read(output, 0, output.Length);
             var val = ConvertStreamToInt(output);
             if (val > 10000)

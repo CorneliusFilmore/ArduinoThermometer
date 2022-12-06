@@ -5,7 +5,7 @@ namespace ArduinoThermometer;
 
 public partial class MainPage : ContentPage
 {
-    private readonly IBluetoothConnector _bluetoothConnector;
+    private IBluetoothConnector _bluetoothConnector;
 
     public MainPage() 
 	{
@@ -24,6 +24,8 @@ public partial class MainPage : ContentPage
 
     private void Button_Clicked(object sender, EventArgs e)
     {
+        
+
         TimeLabel.Text = DateTime.Now.ToString();
         SemanticScreenReader.Announce(TimeLabel.Text);
 
@@ -34,7 +36,7 @@ public partial class MainPage : ContentPage
         HumLabel.Text = _bluetoothConnector.GetData(Commands.GetHumidity).ToString();
         SemanticScreenReader.Announce(HumLabel.Text);
 
-        TempProgress.Progress = NormalizeTemp(_bluetoothConnector.GetData(Commands.GetTemperature));
+        TempProgress.Progress = (double) (_bluetoothConnector.GetData(Commands.GetTemperature) +40) / 180;
         HumProgress.Progress = (double) _bluetoothConnector.GetData(Commands.GetHumidity) / 200;
 
         SemanticScreenReader.Announce(TempProgress.Progress.ToString());
