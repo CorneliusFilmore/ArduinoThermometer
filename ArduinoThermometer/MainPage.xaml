@@ -27,14 +27,14 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- THERMOMETER BAR WINDOW -->
+            <!-- THERMOMETER BAR WINDOW  The max value is 0.5 have to normalize -->
             <StackLayout Grid.Column="0" Padding="1">
-                <ProgressBar Progress="0.5" BackgroundColor="Black" ProgressColor="Red" RotationX="10"/>
+                <ProgressBar Progress="0.3" BackgroundColor="White" ProgressColor="Red" Rotation="-90" Scale="7" />
             </StackLayout>
 
             <!-- HUMIDITY BAR WINDOW -->
-            <StackLayout Grid.Column="1">
-                <ProgressBar Progress="0.8" BackgroundColor="Black" ProgressColor="Blue" />
+            <StackLayout Grid.Column="1" >
+                <ProgressBar Progress="0.4" BackgroundColor="White" ProgressColor="Blue" Rotation="-90" Scale="7"/>
             </StackLayout>
 
             <!-- LABELS WINDOW -->
