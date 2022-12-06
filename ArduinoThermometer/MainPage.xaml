@@ -1,14 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"     
              x:Class="ArduinoThermometer.MainPage"
              Title="Temperture"
              BackgroundColor="White"
              Padding="10">
 
+    <!-- MAIN WINDOW -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- UPPER WINDOW -->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- THERMOMETER BAR WINDOW -->
+            <StackLayout Grid.Column="0" Padding="1">
+                <ProgressBar Progress="0.5" BackgroundColor="Black" ProgressColor="Red" RotationX="10"/>
+            </StackLayout>
+
+            <!-- HUMIDITY BAR WINDOW -->
+            <StackLayout Grid.Column="1">
+                <ProgressBar Progress="0.8" BackgroundColor="Black" ProgressColor="Blue" />
+            </StackLayout>
+
+            <!-- LABELS WINDOW -->
+            <StackLayout Grid.Column="2" Spacing="50" Padding="5">
+                <Label Text="Temperature" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
+                <Label Text="20°C" FontSize="50"  TextColor="Black" HorizontalOptions="Center" />
+                <Label Text="Humidity" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
+                <Label Text="80%" FontSize="50"  TextColor="Black" HorizontalOptions="Center" />
+            </StackLayout>
+        </Grid>
+
+        <!-- LOWER WINDOW -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
     
-    <Grid >
+    
+    
+    
+    <!--<Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
@@ -18,15 +71,21 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        
-        
+       
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-
-            <Frame CornerRadius="40"  HorizontalOptions="Fill" BorderColor="White">
-                <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+      
+           
+            
+                <Grid Grid.Row="1" >
+        
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="2*" />
@@ -35,11 +94,8 @@
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" Text="Temperature" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
                     <Label Grid.Row="1" Text="20°C" FontSize="50"  TextColor="Black" HorizontalOptions="Center" />
-                    <Label Grid.Row="2" Text="Humidity" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
-                    <Label Grid.Row="3" Text="20%" FontSize="50"  TextColor="Black" HorizontalOptions="Center" />
-                </Grid>
-            </Frame>
-        </Grid>
+                <Label Grid.Row="2" Text="Humidity" FontSize="25"  TextColor="Black" HorizontalOptions="Center" />
+            </Grid>
         <Frame Grid.Row="1" CornerRadius="40" Grid.ColumnSpan="3" Margin="5" HorizontalOptions="Fill" BorderColor="White">
             <StackLayout>
                 <Label Text="Atmospheric Pressure: " FontSize="30" TextColor="Black" HorizontalOptions="Center"/>
@@ -47,5 +103,5 @@
                 <Button Text="Update" FontSize="30" BackgroundColor="#002857" TextColor="#99d9d9" Margin="20"/>
             </StackLayout>
         </Frame>
-    </Grid>
+    </Grid>-->
 </ContentPage>

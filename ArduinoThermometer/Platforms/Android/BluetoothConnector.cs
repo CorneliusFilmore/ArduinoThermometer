@@ -39,9 +39,9 @@ namespace ArduinoThermometer.Platforms.Android
         public void Connect(string deviceName)
         {
             var device = _adapter.BondedDevices.FirstOrDefault(d => d.Name == deviceName);
-            _socket = device.CreateRfcommSocketToServiceRecord(UUID.FromString(SspUdid));
+            //_socket = device.CreateRfcommSocketToServiceRecord(UUID.FromString(SspUdid));
 
-            _socket.Connect();
+           // _socket.Connect();
         }
 
         public int GetData(Commands com)
