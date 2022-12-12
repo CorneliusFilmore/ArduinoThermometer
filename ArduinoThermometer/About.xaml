@@ -17,7 +17,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" TextColor="Black" Text="Date: 07.12.2022"/>
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 07.12.22"/>
                 <Label Grid.Column="1" x:Name="FakeLabelTemp" TextColor="Black" Text="Temp: 21°C"/>
                 <Label Grid.Column="2" x:Name="FakeLabelHum" TextColor="Black" Text="Humid: 80%"/>
 
@@ -35,7 +35,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" TextColor="Black" Text="Date: 06.12.2022"/>
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 06.12.22"/>
                 <Label Grid.Column="1" TextColor="Black" Text="Temp: 21°C"/>
                 <Label Grid.Column="2" TextColor="Black" Text="Humid: 70%"/>
 
@@ -52,7 +52,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" TextColor="Black" Text="Date: 05.12.2022"/>
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 05.12.22"/>
                 <Label Grid.Column="1" TextColor="Black" Text="Temp: 20°C"/>
                 <Label Grid.Column="2" TextColor="Black" Text="Humid: 80%"/>
 
@@ -69,7 +69,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" TextColor="Black" Text="Date: 04.12.2022"/>
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 04.12.22"/>
                 <Label Grid.Column="1" TextColor="Black" Text="Temp: 15°C"/>
                 <Label Grid.Column="2" TextColor="Black" Text="Humid: 60%"/>
 
@@ -86,7 +86,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" TextColor="Black" Text="Date: 03.12.2022"/>
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 03.12.22"/>
                 <Label Grid.Column="1" TextColor="Black" Text="Temp: 17°C"/>
                 <Label Grid.Column="2" TextColor="Black" Text="Humid: 50%"/>
 
@@ -103,7 +103,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" TextColor="Black" Text="Date: 02.12.2022"/>
+                <Label Grid.Column="0" TextColor="Black" Text="Date: 02.12.22"/>
                 <Label Grid.Column="1" TextColor="Black" Text="Temp: 15°C"/>
                 <Label Grid.Column="2" TextColor="Black" Text="Humid: 90%"/>
 
